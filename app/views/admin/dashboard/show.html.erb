@@ -1,4 +1,28 @@
-<h1>Admin Dashboard</h1>
+<section class="admin-dashboard-index">
 
-Dashboard for Admin Details will go here.
-Until this page has content's we'll redirect this page to products in the controller.
+  <header class="page-header">
+    <h1>Admin &raquo; Dashboard</h1>
+  </header>
+
+  <div class="panel panel-default products">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Total Products</th>
+          <th>Total Categories</th>
+        </tr>
+      </thead>
+      <tbody>
+        <td>
+        <%= @total_products %>
+        </td>
+        <td>
+        <%= @total_categories %>
+        </td>
+      </tbody>
+    </table>
+
+  </div>
+
+</section>
