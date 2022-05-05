@@ -49,10 +49,18 @@ main section.categories-show {
           color: white;
         }
 
-        button {
+        button[type='submit'] {
           background: white;
           color: rgba(0, 130, 29, 0.7);
         }
+        
+        button[type='button'] {
+          background: rgba(192, 224, 199, 1);
+          color: rgba(218, 52, 68, 0.7);
+          border: 0px;
+          cursor: default;
+        }
+
       }
       img {
         width: 100%;
