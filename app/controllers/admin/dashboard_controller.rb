@@ -4,7 +4,7 @@ class Admin::DashboardController < ApplicationController
   def show
     @products = Product.order(id: :desc).all
     @total_products = @products.count
-    @total_categories = @products.collect.uniq{|product| product.category.id }.count
+    @total_categories = Category.count(:id)
   end
 
   def loggedIn
