@@ -2,8 +2,7 @@ class Admin::CategoriesController < ApplicationController
   http_basic_authenticate_with name: ENV['ADMIN_USERNAME'], password: ENV['ADMIN_PASSWORD']
 
   def index
-    @categories = Category.order(id: :asc).uniq{|category| category.name }
-    @categories_names = @categories.map{ |category| category.name }
+    @categories = Category.order(id: :asc).uniq{|category| category }
   end
 
   def new
