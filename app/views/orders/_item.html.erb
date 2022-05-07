@@ -1,19 +1,12 @@
-<tr>
-  <td>
-    <%= image_tag product.image.tiny.url %>
-  </td>
-  <td>
+<%= tag.tr do %>
+  <%= tag.td image_tag product.image.tiny.url, title: product.name, alt: product.name, loading:"lazy", class:"rounded" %>
+  
+  <%= tag.td do %>
     <h4><%= product.name %></h4>
-    <br>
     <p><%= product.description %></p>
-  </td>
-  <td>
-    <%= humanized_money_with_symbol product.price %>
-  </td>
-  <td>
-    <%= quantity %>
-  </td>
-  <td>
-    <%= humanized_money_with_symbol product.price * quantity %>
-  </td>
-</tr>
+  <% end %>
+  
+  <%= tag.td humanized_money_with_symbol product.price %>
+  <%= tag.td quantity %>
+  <%= tag.td humanized_money_with_symbol product.price * quantity %>
+<% end %>
