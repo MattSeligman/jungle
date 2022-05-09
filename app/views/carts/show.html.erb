@@ -4,6 +4,7 @@
     <h1>My Cart</h1>
   </header>
 
+<% if not enhanced_cart.empty? %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -31,6 +32,7 @@
       </tfoot>
     </table>
   </div>
+<% end %>
 
   <div class="row">
     <div class="col-xs-12">
@@ -40,7 +42,7 @@
           Your cart is currently empty.
         </div>
 
-        <a href="/">View our Products</a>
+        <%= link_to "View our Products", "/", class: "link-success fs-3" %>
 
       <% else %>
 
@@ -50,9 +52,9 @@
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-amount="<%= cart_subtotal_cents %>"
           data-name="Jungle"
-          data-description="Khurram Virani's Jungle Order"
+          data-description="<%= current_user ? current_user.first_name.capitalize + " " + current_user.last_name.capitalize + "'s Jungle Order" : "Khurram Virani's Jungle Order" %>"
           data-locale="auto"
-          data-email="kvirani@gmail.com"
+          data-email="<%= current_user ? current_user.email : "kvirani@gmail.com" %>"
           data-currency="cad">
         </script>
       <% end %>
