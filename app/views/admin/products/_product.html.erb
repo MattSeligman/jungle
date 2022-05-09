@@ -1,15 +1,25 @@
+<% quantity_low = 10 %>
 <%= tag.tr do%>
 
-  <%= tag.td image_tag product.image.tiny.url, title: product.name, alt: product.name, loading:"lazy", class:"rounded"  %> 
+  <%= tag.td do%>
+    <a href="/products/<%= product.id %>">
+      <%= image_tag product.image.tiny.url, title: product.name, alt: product.name, loading:"lazy", class:"rounded border"  %> 
+    </a>
+  <% end %>
 
   <%= tag.td do%>
-    <%= tag.h4 product.name %>
-    <%= tag.p product.description %>
+    <a href="/products/<%= product.id %>" class="text-decoration-none">
+      <%= tag.h4 product.name, class: "fs-4 link-dark" %>
+    </a>
+    <%= tag.p product.description, class: "fs-6" %>
   <% end %>
 
   <%= tag.td product.category.name %>
   <%= tag.td humanized_money_with_symbol product.price %>
-  <%= tag.td product.quantity %>
+  <%= tag.td tag.span product.quantity, 
+      class: product.quantity >= quantity_low ? "badge bg-primary" : "badge bg-danger" %>
+
   <%= tag.td link_to fa_icon('trash'), [:admin, product], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
 
 <% end %>
+
