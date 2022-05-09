@@ -5,7 +5,14 @@
   </header>
 
   <div class="well">
-    <%= link_to '+ New Product', [:new, :admin, :product], class: 'btn btn-info' %>
+
+  <div>
+  Legend:
+    <span class="badge bg-primary">Fair amount of Stock</span>
+    <span class="badge bg-danger">Low/Out of Stock</span>
+  </div>
+
+      <%= link_to '+ New Product', [:new, :admin, :product], class: "btn btn-success m-3" %>
   </div>
 
   <div class="panel panel-default products">
@@ -16,7 +23,7 @@
           <th colspan="2">Product</th>
           <th>Category</th>
           <th>Price</th>
-          <th>Qty Remaining</th>
+          <th>Stock</th>
           <th></th>
         </tr>
       </thead>
