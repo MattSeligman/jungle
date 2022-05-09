@@ -2,13 +2,8 @@ main section.dashboard-index,
 main section.products-index,
 main section.categories-show {
   .products {
-    // display: flex;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
-
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1.5em;
     grid-template-rows: min-content;
 
@@ -34,14 +29,18 @@ main section.categories-show {
       a {
         text-decoration: none;
       }
+
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: space-between;
       font-family: "Montserrat";
       width: 100%;
       position: relative;
-      text-align: center;
       border-radius: 0.25em;
       border: 0.1em solid rgba(0, 130, 29, 0.3);
       box-shadow: rgba(0, 130, 29, 0.16) 0px 3px 6px, rgba(0, 130, 29, 0.23) 0px 3px 6px;
-      // transition: opacity 300ms linear;
+      transition: opacity 300ms linear;
 
       &:hover {
         transition: all 150ms linear;
