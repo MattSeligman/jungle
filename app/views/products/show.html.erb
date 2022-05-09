@@ -8,15 +8,30 @@
     <div>
       <h1><%= @product.name %></h1>
       <p><%= @product.description %></p>
+
+      <% product_sold_out = @product.quantity.zero? %>
+
+      <% if !product_sold_out %>
       <div class="quantity">
-        <span><%= @product.quantity %> in stock at </span>
-        <span><%= humanized_money_with_symbol @product.price %></span>
+        <span><%= @product.quantity %> in stock at</span>
+        <%= tag.span humanized_money_with_symbol @product.price %>
       </div>
-      <div class="price">          
+
+      <div class="price">    
         <%= button_to add_item_cart_path(product_id: @product.id), class: 'btn' , method: :post do %>
           <%= fa_icon "shopping-cart", text: 'Add' %>
-        <% end %>          
+        <% end %>
       </div>
+
+      <% else %>
+
+      <div class="quantity">
+        <span>Currently restocking</span>
+        <%= tag.span "Sold Out", class: 'badge soldout' %>
+      </div>
+
+      <% end %>
+
     </div>
   </article>
 
