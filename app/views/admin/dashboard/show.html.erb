@@ -4,25 +4,32 @@
     <h1>Admin &raquo; Dashboard</h1>
   </header>
 
-  <div class="panel panel-default products">
+  <div class="panel panel-default products container">
+    <div class="row align-items-start">
 
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Total Products</th>
-          <th>Total Categories</th>
-        </tr>
-      </thead>
-      <tbody>
-        <td>
-        <%= @total_products %>
-        </td>
-        <td>
-        <%= @total_categories %>
-        </td>
-      </tbody>
-    </table>
+      <div class="col">
+        <div class="card text-center">
+          <h5 class="card-header">Current Products</h5>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Total Products</h5>
+            <p class="card-text"><%= @total_products %></p>
+            <a href="/admin/products" class="btn btn-primary">Edit Products</a>
+          </div>
+        </div>
+      </div>
 
+      <div class="col">
+        <div class="card text-center">
+          <h5 class="card-header">Current Categories</h5>
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Total Categories</h5>
+            <p class="card-text"><%= @total_categories %></p>
+            <a href="/admin/categories" class="btn btn-primary">Edit Categories</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-
+  
 </section>
