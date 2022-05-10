@@ -68,6 +68,7 @@ RSpec.describe Product, type: :model do
       @product.save
       expect(@product).to be_present
       expect(@product).to_not be_valid
+      expect(@product.errors.full_messages).to include("Name can't be blank")
     end
 
     it 'should not work for missing price' do
@@ -75,6 +76,7 @@ RSpec.describe Product, type: :model do
       @product.save
       expect(@product).to be_present
       expect(@product).to_not be_valid
+      expect(@product.errors.full_messages).to include("Price can't be blank")
     end
 
     it 'should not work for missing quantity' do
@@ -82,6 +84,15 @@ RSpec.describe Product, type: :model do
       @product.save
       expect(@product).to be_present
       expect(@product).to_not be_valid
+      expect(@product.errors.full_messages).to include("Quantity can't be blank")
+    end
+
+    it 'should not work for missing category' do
+      @product = Product.new(name: 'Staghorn Fern', price_cents: 300, quantity: 25, category: nil)
+      @product.save
+      expect(@product).to be_present
+      expect(@product).to_not be_valid
+      expect(@product.errors.full_messages).to include("Category can't be blank")
     end
 
   end
