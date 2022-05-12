@@ -19,13 +19,16 @@ If Rails is complaining about authentication to the database, uncomment the user
 
 ## Preview After Revisions
 
-Add Products to Cart
+### Add Products to Cart
+
 ![Add Products to Cart](https://github.com/MattSeligman/jungle/blob/master/docs/add-products-to-cart.gif?raw=true)
 
-Cart Checkout
+### Cart Checkout
+
 ![Cart Checkout](https://github.com/MattSeligman/jungle/blob/master/docs/cart-checkout.gif?raw=true)
 
-Stock Control
+### Stock Control
+
 ![Stock Control](https://github.com/MattSeligman/jungle/blob/master/docs/stock-control.gif?raw=true)
 
 ## Stripe Testing
