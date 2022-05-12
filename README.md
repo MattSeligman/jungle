@@ -17,6 +17,17 @@ A mini e-commerce application built with Rails 6.1 for purposes of teaching Rail
 
 If Rails is complaining about authentication to the database, uncomment the user and password fields from `config/database.yml` in the development and test sections, and replace if necessary the user and password `development` to an existing database user.
 
+## Preview After Revisions
+
+Add Products to Cart
+![Add Products to Cart](https://github.com/MattSeligman/jungle/blob/master/docs/add-products-to-cart.gif?raw=true)
+
+Cart Checkout
+![Cart Checkout](https://github.com/MattSeligman/jungle/blob/master/docs/cart-checkout.gif?raw=true)
+
+Stock Control
+![Stock Control](https://github.com/MattSeligman/jungle/blob/master/docs/stock-control.gif?raw=true)
+
 ## Stripe Testing
 
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
